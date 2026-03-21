@@ -37,3 +37,11 @@ next-env.d.ts
 
 # Legacy static site (source reference only)
 webmgmconsulting/
+
+# env files (seguridad — no exponer credenciales en repo público)
+.env
+.env.*
+!.env.example
+
+# scripts de despliegue/automatización
+/scripts

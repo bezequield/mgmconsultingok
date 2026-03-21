@@ -5,9 +5,9 @@ const VERBS = ["MEJORAR", "OPTIMIZAR", "CRECER", "ESCALAR", "AUMENTAR"];
 
 const STATS = [
   { value: "$0", label: "Costos de estructura eliminados" },
-  { value: "1", label: "Un solo equipo, ciclo completo" },
-  { value: "E2E", label: "Del análisis al anuncio" },
-  { value: "100%", label: "Decisiones basadas en datos" },
+  { value: "E2E", label: "Análisis → Automatización → Resultado" },
+  { value: "4", label: "Audiencias core: droguerías, farmacias, clínicas, profesionales" },
+  { value: "100%", label: "Decisiones basadas en datos y KPIs" },
 ];
 
 export default function Tesis() {
@@ -35,23 +35,29 @@ export default function Tesis() {
             NO SE PUEDE{" "}
             <span
               className="text-mgm-yellow inline-block transition-all duration-300"
-              style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(-12px)" }}>
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(-12px)",
+              }}
+            >
               {VERBS[verbIdx]}
             </span>
           </h2>
           <p className="text-gray-400 mt-8 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            Cada decisión de marketing que no está respaldada por datos es una apuesta. MGM Consulting convierte
-            tus métricas en ventaja competitiva real. Medimos todo, optimizamos todo, y te mostramos exactamente
-            cuánto vale cada peso invertido.
+            Cada decisión estratégica que no está respaldada por datos es una apuesta.
+            MGM Consulting convierte las métricas de tu <strong className="text-white">droguería, farmacia, clínica o laboratorio farmacéutico</strong> en
+            ventaja competitiva real. Medimos todo, optimizamos procesos y te mostramos exactamente cuánto rinde cada peso invertido.
           </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {STATS.map((stat, i) => (
-            <div key={stat.value}
-              className="reveal bg-mgm-navy-l border border-white/10 rounded-2xl p-6 text-center hover:border-mgm-yellow/40 transition-all duration-300"
-              style={{ transitionDelay: `${i * 80}ms` }}>
-              <div className="font-anton text-4xl sm:text-5xl text-mgm-yellow mb-3">{stat.value}</div>
+            <div
+              key={stat.value}
+              className="reveal bg-mgm-navy-l border border-white/10 rounded-2xl p-5 sm:p-6 text-center hover:border-mgm-yellow/40 transition-all duration-300"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="font-anton text-3xl sm:text-5xl text-mgm-yellow mb-3">{stat.value}</div>
               <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{stat.label}</p>
             </div>
           ))}

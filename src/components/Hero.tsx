@@ -2,11 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const PHRASES = [
-  "PARA FARMACIAS",
+  "PARA DROGUERÍAS Y DISTRIBUIDORAS",
+  "PARA FARMACIAS Y CADENAS",
   "PARA CLÍNICAS Y CONSULTORIOS",
-  "PARA RETAIL DE SALUD",
+  "PARA LABORATORIOS FARMACÉUTICOS",
   "PARA PROFESIONALES DE LA SALUD",
-  "PARA DISTRIBUIDORAS FARMACÉUTICAS",
 ];
 
 export default function Hero() {
@@ -110,9 +110,7 @@ export default function Hero() {
 
     draw();
 
-    const handleResize = () => {
-      resize();
-    };
+    const handleResize = () => resize();
     window.addEventListener("resize", handleResize);
     return () => {
       cancelAnimationFrame(animId);
@@ -129,69 +127,86 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mgm-navy-dark">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mgm-navy-dark"
+    >
       {/* Canvas particles */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Background orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full opacity-20 animate-float-slow"
-          style={{ background: "radial-gradient(circle, #ffc700 0%, transparent 70%)" }} />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full opacity-15 animate-float-medium"
-          style={{ background: "radial-gradient(circle, #162255 0%, transparent 70%)" }} />
+        <div
+          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full opacity-20 animate-float-slow"
+          style={{ background: "radial-gradient(circle, #ffc700 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full opacity-15 animate-float-medium"
+          style={{ background: "radial-gradient(circle, #162255 0%, transparent 70%)" }}
+        />
       </div>
 
       {/* Grid overlay */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none"
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(255,199,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,199,0,0.3) 1px, transparent 1px)",
+          backgroundImage:
+            "linear-gradient(rgba(255,199,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,199,0,0.3) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
           maskImage: "radial-gradient(ellipse at center, black 0%, transparent 75%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, black 0%, transparent 75%)",
-        }} />
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
         <div className="mb-6">
           <span className="inline-block bg-mgm-yellow/10 border border-mgm-yellow/30 text-mgm-yellow text-xs font-semibold px-4 py-2 rounded-full tracking-widest uppercase">
-            Business Intelligence · E2E Marketing · Automatización
+            Business Intelligence · Automatización · Estrategia E2E
           </span>
         </div>
 
         <h1 className="font-anton text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-4 text-white">
-          TU DEPARTAMENTO COMERCIAL
-          <br />Y DE MARKETING EXTERNO
+          CONSULTORA ESTRATÉGICA
+          <br />
+          <span className="text-mgm-yellow">DE SOLUCIONES DIGITALES</span>
+          <br />
+          PARA EL SECTOR SALUD
         </h1>
 
         <div className="h-12 sm:h-14 flex items-center justify-center mb-6">
-          <span className="font-anton text-2xl sm:text-3xl md:text-4xl text-mgm-yellow">
+          <span className="font-anton text-xl sm:text-2xl md:text-3xl text-mgm-yellow">
             {typeText}
             <span className="cursor-blink ml-0.5">|</span>
           </span>
         </div>
 
         <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Gestionamos <strong className="text-mgm-yellow">UPLIFT</strong>: el incremento real y medible en tu facturación.
-          Sin costos de estructura interna, con resultados desde el día uno.
+          Transformamos datos en decisiones para <strong className="text-white">droguerías, farmacéuticas, clínicas</strong> y profesionales de la salud.
+          Análisis de KPIs, automatización de procesos y estrategia de crecimiento medible desde el día uno.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <button onClick={() => handleAnchorClick("#contacto")}
-            className="magnetic-btn bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl text-base hover:bg-yellow-300 transition-all duration-200 shadow-lg shadow-mgm-yellow/20">
+          <button
+            onClick={() => handleAnchorClick("#contacto")}
+            className="magnetic-btn bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl text-base hover:bg-yellow-300 transition-all duration-200 shadow-lg shadow-mgm-yellow/20"
+          >
             Diagnóstico ADN Comercial
           </button>
-          <button onClick={() => handleAnchorClick("#planes")}
-            className="magnetic-btn border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base hover:border-mgm-yellow hover:text-mgm-yellow transition-all duration-200">
-            Ver Planes
+          <button
+            onClick={() => handleAnchorClick("#servicios")}
+            className="magnetic-btn border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base hover:border-mgm-yellow hover:text-mgm-yellow transition-all duration-200"
+          >
+            Ver Servicios
           </button>
         </div>
 
         {/* Stats */}
         <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
           {[
-            { value: "+16", label: "Años de experiencia" },
-            { value: "2", label: "Continentes" },
-            { value: "E2E", label: "Del análisis al anuncio" },
+            { value: "+16", label: "Años en sector salud" },
+            { value: "E2E", label: "Del análisis al resultado" },
+            { value: "100%", label: "Decisiones basadas en datos" },
           ].map((stat) => (
             <div key={stat.value} className="text-center">
               <div className="font-anton text-3xl sm:text-4xl text-mgm-yellow">{stat.value}</div>

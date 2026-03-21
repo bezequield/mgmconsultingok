@@ -44,7 +44,8 @@ body {
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.reveal.visible {
+.reveal.visible,
+.reveal.revealed {
   opacity: 1;
   transform: translateY(0);
 }
