@@ -16,6 +16,8 @@ export interface Sector {
   tagline: string;
   description: string;
   heroTitle: string;
+  heroTitleStatic: string;
+  heroWords: string[];
   heroSubtitle: string;
   painPoint: string;
   icon: string;
@@ -38,6 +40,8 @@ export const SECTORES: Sector[] = [
     description:
       "Las droguerías operan en un mercado de márgenes comprimidos donde la visibilidad ante laboratorios y farmacias determina el volumen. Sin estrategia digital B2B, perdés contratos ante distribuidoras más pequeñas pero mejor posicionadas.",
     heroTitle: "TU DROGUERÍA COMPITE\nCON GIGANTES.\n¿TIENE LA\nESTRATEGIA PARA\nGANAR?",
+    heroTitleStatic: "TU DROGUERÍA COMPITE\nCON GIGANTES.\n¿TIENE LA\nESTRATEGIA PARA",
+    heroWords: ["GANAR?", "CRECER?", "DIFERENCIARTE?", "DOMINAR?", "ESCALAR?", "COMPETIR?"],
     heroSubtitle:
       "Business Intelligence, posicionamiento B2B y kits digitales para visitadores médicos. Escalá tu participación de mercado sin aumentar tu estructura.",
     painPoint:
@@ -95,6 +99,8 @@ export const SECTORES: Sector[] = [
     description:
       "Las cadenas entran a tu barrio con precios subsidiados y apps propias. Tu ventaja es la confianza vecinal — pero solo si la activás digitalmente antes de que ellos terminen de instalarse.",
     heroTitle: "LAS CADENAS\nYA ESTÁN EN\nTU BARRIO.\n¿TU FARMACIA\nTIENE PLAN?",
+    heroTitleStatic: "LAS CADENAS\nYA ESTÁN EN\nTU BARRIO.\n¿TU FARMACIA",
+    heroWords: ["TIENE PLAN?", "PUEDE CRECER?", "SE DIFERENCIA?", "FIDELIZA?", "SOBREVIVE?", "GANA?"],
     heroSubtitle:
       "SEO local en Google Maps, fidelización por WhatsApp y gestión de reputación vecinal. Defendé tu territorio con estrategia digital.",
     painPoint:
@@ -152,6 +158,8 @@ export const SECTORES: Sector[] = [
     description:
       "El retail farmacéutico juega en otro estadio: e-commerce, dermocosmética, parafarmacia y campañas de volumen. Sin estructura digital profesional, tu inversión en publicidad se convierte en gasto sin retorno.",
     heroTitle: "INVERTÍS EN ADS\nY EL ROI NO\nCIERRA.\nACÁ ESTÁ\nEL PROBLEMA.",
+    heroTitleStatic: "INVERTÍS EN ADS\nY EL ROI NO\nCIERRA.\nACÁ ESTÁ",
+    heroWords: ["EL PROBLEMA.", "EL ERROR.", "LA FUGA.", "EL COSTO.", "LA SOLUCIÓN."],
     heroSubtitle:
       "E-commerce farmacéutico, estrategia de dermocosmética y campañas de performance con ROI medible. Vendé más sin quemar el presupuesto.",
     painPoint:
@@ -209,6 +217,8 @@ export const SECTORES: Sector[] = [
     description:
       "Las clínicas de alta complejidad enfrentan el desafío de escalar sin comprometer la calidad asistencial. El caos administrativo, la reputación online no gestionada y la ausencia de KPIs clínicos destruyen márgenes que ninguna obra social va a recuperar.",
     heroTitle: "TU CLÍNICA\nCRECE EN\nPACIENTES\nY TAMBIÉN\nEN CAOS.",
+    heroTitleStatic: "TU CLÍNICA\nCRECE EN\nPACIENTES\nY TAMBIÉN EN",
+    heroWords: ["CAOS.", "DEUDA.", "RIESGO.", "CONTROL.", "DATOS.", "RESULTADOS."],
     heroSubtitle:
       "CRM médico con cumplimiento de datos, Business Intelligence clínico y gestión de reputación en Google. Escalar sin perder control es posible.",
     painPoint:
@@ -266,6 +276,8 @@ export const SECTORES: Sector[] = [
     description:
       "Los médicos y profesionales de la salud enfrentan una paradoja: cuanto más tiempo pasan atendiendo pacientes, menos tiempo tienen para construir la presencia digital que atrae los casos que realmente quieren atender. El resultado es una agenda llena de consultas que no corresponden a su especialización real.",
     heroTitle: "AGENDA LLENA,\nPERO NO CON\nEL PACIENTE\nQUE ELEGISTE\nATENDER.",
+    heroTitleStatic: "AGENDA LLENA,\nPERO NO CON\nEL PACIENTE\nQUE ELEGISTE",
+    heroWords: ["ATENDER.", "TRATAR.", "ELEGIR.", "IMPACTAR.", "CURAR.", "TRANSFORMAR."],
     heroSubtitle:
       "Marca personal médica, turnos automatizados y posicionamiento de especialidad. Que lleguen los pacientes correctos, no los que llegan.",
     painPoint:

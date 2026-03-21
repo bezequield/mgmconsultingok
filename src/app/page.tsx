@@ -37,17 +37,11 @@ export default function GatekeeperPage() {
       />
 
       {/* Logo */}
-      <div className="mb-10 flex flex-col items-center gap-2 z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/img/mgm-logo.svg"
-          alt="MGM Consulting"
-          className="h-10 w-auto opacity-90"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = "none";
-          }}
-        />
-        <span className="text-xs tracking-[0.25em] text-blue-300/60 uppercase font-medium">
+      <div className="mb-10 flex flex-col items-center gap-3 z-10">
+        <span className="font-anton text-4xl sm:text-5xl text-white tracking-tight">
+          MGM<span className="text-[#f5c842]">.</span>
+        </span>
+        <span className="text-xs tracking-[0.25em] text-blue-300/50 uppercase font-medium text-center">
           Consultora Estratégica · Sector Salud
         </span>
       </div>
