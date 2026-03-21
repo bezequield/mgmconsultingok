@@ -9,27 +9,21 @@ export default function GatekeeperPage() {
   const router = useRouter();
   const [selected, setSelected] = useState<string | null>(null);
   const [hovering, setHovering] = useState<string | null>(null);
-  const [entered, setEntered] = useState(false);
+  const [previousSector, setPreviousSector] = useState<string | null>(null);
 
   useEffect(() => {
-    // If user already chose a sector previously, redirect immediately
+    // Lee el sector previo sólo para resaltarlo visualmente — nunca redirige
     const saved = localStorage.getItem("mgm_sector");
-    if (saved) {
-      router.replace(`/sectores/${saved}`);
-    } else {
-      setEntered(true);
-    }
-  }, [router]);
+    if (saved) setPreviousSector(saved);
+  }, []);
 
   function handleSelect(slug: string) {
     setSelected(slug);
     localStorage.setItem("mgm_sector", slug);
     setTimeout(() => {
       router.push(`/sectores/${slug}`);
-    }, 350);
+    }, 320);
   }
-
-  if (!entered) return null;
 
   return (
     <main className="min-h-screen bg-[#070e2a] flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden">
@@ -76,6 +70,7 @@ export default function GatekeeperPage() {
         {SECTORES.map((sector, i) => {
           const isSelected = selected === sector.slug;
           const isHovered = hovering === sector.slug;
+          const isPrevious = previousSector === sector.slug && !selected;
 
           return (
             <button
@@ -89,6 +84,8 @@ export default function GatekeeperPage() {
                 ${
                   isSelected
                     ? "border-[#f5c842] bg-[#f5c842]/10 scale-[1.02]"
+                    : isPrevious
+                    ? "border-white/25 bg-white/[0.05]"
                     : isHovered
                     ? "border-white/30 bg-white/5 scale-[1.01]"
                     : "border-white/10 bg-white/[0.03] hover:bg-white/5"
@@ -112,6 +109,13 @@ export default function GatekeeperPage() {
               <p className="text-xs sm:text-sm text-blue-200/60 leading-relaxed">
                 {sector.tagline}
               </p>
+
+              {/* "Tu sector anterior" badge — discrete */}
+              {isPrevious && (
+                <span className="absolute top-3 right-3 text-[10px] text-white/30 uppercase tracking-widest">
+                  tu sector
+                </span>
+              )}
 
               {/* Arrow indicator */}
               <span
