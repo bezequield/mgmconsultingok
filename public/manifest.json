@@ -1,0 +1,16 @@
+{
+  "name": "MGM Consulting Health & Retail",
+  "short_name": "MGM Consulting",
+  "description": "Tu departamento comercial y de marketing externo para farmacias y clínicas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040c1e",
+  "theme_color": "#0d1b4a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable any" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable any" }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "es"
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- MGM wordmark placeholder -->
+  <text x="0" y="32"
+        font-family="Anton, sans-serif"
+        font-size="36"
+        fill="#ffffff"
+        letter-spacing="2">MGM</text>
+  <circle cx="152" cy="8" r="4" fill="#ffc700"/>
+</svg>

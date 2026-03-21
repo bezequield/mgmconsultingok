@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --yellow: #ffc700;
+  --navy-dark: #040c1e;
+  --navy: #0d1b4a;
+  --navy-l: #162255;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--navy-dark);
+  color: white;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--navy-dark);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 3px; }
+
+@layer utilities {
+  .font-anton { font-family: 'Anton', sans-serif; }
+  .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes typewriterBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: typewriterBlink 1s step-end infinite;
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.typing-dot {
+  animation: dotBounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.plan-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255,199,0,0.15), transparent);
+  transform: rotate(25deg);
+  animation: shine 5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -60%; opacity: 0; }
+  20% { opacity: 0.15; }
+  60% { opacity: 0.15; }
+  100% { left: 200%; opacity: 0; }
+}
+
+.magnetic-btn {
+  transition: transform 0.2s ease;
+}
