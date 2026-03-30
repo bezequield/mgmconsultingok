@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const WA_LINK = "https://wa.me/5491127036100?text=" + encodeURIComponent("Hola MGM Consulting, quiero un diagnóstico gratuito de Business Intelligence para mi organización de salud.");
+
 export const metadata: Metadata = {
   title: "Business Intelligence & KPIs para Clínicas y Droguerías | MGM Consulting",
   description: "Transformamos datos de droguerías, farmacias y clínicas en decisiones estratégicas medibles. Dashboards ejecutivos, Sell-Out/Sell-In y análisis de KPIs en tiempo real.",
@@ -15,7 +17,6 @@ const BENEFICIOS = [
     icon: "🏭",
     items: [
       "Análisis Sell-In vs. Sell-Out por canal y período",
-      "Detección de quiebres de stock antes de que ocurran",
       "Rentabilidad por línea de producto y laboratorio",
       "Dashboard de cobranzas y cuentas por cobrar",
     ],
@@ -37,7 +38,6 @@ const BENEFICIOS = [
       "Performance por sucursal y por producto",
       "Análisis de obra social: acreditación y rechazos",
       "Identificación de productos ancla vs. de margen",
-      "Alertas automáticas por desvío de KPIs",
     ],
   },
 ];
@@ -58,7 +58,7 @@ export default function BusinessIntelligencePage() {
         <section className="py-16 sm:py-24 bg-mgm-navy-dark">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-4">
-              <Link href="/#servicios" className="text-mgm-yellow text-sm hover:underline">
+              <Link href="/general#servicios" className="text-mgm-yellow text-sm hover:underline">
                 ← Volver a Servicios
               </Link>
             </div>
@@ -73,12 +73,14 @@ export default function BusinessIntelligencePage() {
               Transformamos los datos de tu droguería, clínica o farmacia en decisiones estratégicas medibles.
               Del caos de planillas al dashboard ejecutivo que todo director necesita.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -183,12 +185,14 @@ export default function BusinessIntelligencePage() {
             <p className="text-gray-400 mb-8">
               En 60 minutos de diagnóstico gratuito te mostramos qué KPIs deberías estar midiendo y por qué no los estás midiendo todavía.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-10 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Solicitar Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
       </main>

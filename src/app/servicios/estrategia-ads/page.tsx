@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const WA_LINK = "https://wa.me/5491127036100?text=" + encodeURIComponent("Hola MGM Consulting, quiero un diagnóstico gratuito sobre estrategia y publicidad digital para mi organización de salud.");
+
 export const metadata: Metadata = {
   title: "Estrategia de Crecimiento & Ads para el Sector Salud | MGM Consulting",
   description: "Pauta digital basada en ROI para farmacias, droguerías y clínicas. Google Ads y Meta Ads optimizados para el sector salud con cumplimiento de las políticas de publicidad médica.",
@@ -72,7 +74,7 @@ export default function EstrategiaAdsPage() {
         <section className="py-16 sm:py-24 bg-mgm-navy-dark">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-4">
-              <Link href="/#servicios" className="text-mgm-yellow text-sm hover:underline">
+              <Link href="/general#servicios" className="text-mgm-yellow text-sm hover:underline">
                 ← Volver a Servicios
               </Link>
             </div>
@@ -88,14 +90,16 @@ export default function EstrategiaAdsPage() {
               de pacientes y clientes que se optimizan solos con el tiempo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/#contacto"
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base text-center"
               >
                 Diagnóstico Gratuito →
-              </Link>
+              </a>
               <Link
-                href="/#planes"
+                href="/general#planes"
                 className="inline-block border border-white/20 text-white font-semibold px-8 py-4 rounded-xl hover:border-mgm-yellow hover:text-mgm-yellow transition-colors text-base text-center"
               >
                 Ver Planes
@@ -212,12 +216,14 @@ export default function EstrategiaAdsPage() {
             <p className="text-gray-400 mb-8">
               En el diagnóstico gratuito calculamos el presupuesto óptimo para tu tipo de negocio y los resultados proyectados antes de gastar un peso.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-10 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Solicitar Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
       </main>

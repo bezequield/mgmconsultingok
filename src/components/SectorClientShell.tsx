@@ -66,7 +66,7 @@ export default function SectorClientShell({ sector, posts }: Props) {
     return () => observer.disconnect();
   }, [sector.slug]);
 
-  const waLink = `https://wa.me/5491100000000?text=${encodeURIComponent(sector.ctaMessage)}`;
+  const waLink = `https://wa.me/5491127036100?text=${encodeURIComponent(sector.ctaMessage)}`;
 
   return (
     <>

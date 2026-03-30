@@ -57,6 +57,11 @@ export default function Navbar() {
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: "smooth" });
         setMenuOpen(false);
+      } else {
+        // Anchor not found on current page → go to general page with anchor
+        e.preventDefault();
+        router.push(`/general${href}`);
+        setMenuOpen(false);
       }
     }
   };

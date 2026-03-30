@@ -12,12 +12,12 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Consultora Estratégica de Soluciones Digitales para el Sector Salud.
-              Especialistas en <strong className="text-gray-300">droguerías, farmacéuticas, clínicas</strong> y profesionales de la salud.
+              Especialistas en <strong className="text-gray-300">droguerías, farmacéuticas, clínicas y profesionales de la salud</strong>.
               Business Intelligence, automatización de procesos y estrategia E2E.
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.instagram.com/mgmconsulting.health"
+                href="https://www.instagram.com/mgmconsultingok"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:border-mgm-yellow hover:text-mgm-yellow transition-all"
@@ -28,7 +28,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/5491112345678"
+                href="https://wa.me/5491127036100"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:border-mgm-yellow hover:text-mgm-yellow transition-all"
@@ -49,8 +49,8 @@ export default function Footer() {
                 ["Automatización & CRM", "/servicios/automatizacion-crm"],
                 ["Estrategia & Ads", "/servicios/estrategia-ads"],
                 ["Transformación Digital", "/servicios/transformacion-digital"],
-                ["Redes Sociales", "#servicios"],
-                ["Email Marketing", "#servicios"],
+                ["Redes Sociales", "/general#servicios"],
+                ["Email Marketing", "/general#servicios"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href} className="hover:text-mgm-yellow transition-colors">
@@ -65,16 +65,16 @@ export default function Footer() {
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Empresa</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               {[
-                ["Metodología", "#proceso"],
-                ["Equipo", "#equipo"],
-                ["Planes", "#planes"],
-                ["Blog & Insights", "#blog"],
-                ["Diagnóstico Gratuito", "#contacto"],
+                ["Metodología", "/general#proceso"],
+                ["Equipo", "/general#equipo"],
+                ["Planes", "/general#planes"],
+                ["Blog & Insights", "/general#blog"],
+                ["Diagnóstico Gratuito", "/general#contacto"],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <a href={href} className="hover:text-mgm-yellow transition-colors">
+                  <Link href={href} className="hover:text-mgm-yellow transition-colors">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -39,7 +39,7 @@ const SERVICIOS = [
     icon: "📱",
     title: "Redes Sociales & Contenido Médico",
     desc: "Gestión profesional de RRSS con contenido médico y farmacéutico auténtico. Autoridad de marca sin comprometer la ética profesional.",
-    href: "/#servicios",
+    href: "#contacto",
     audiences: ["Clínicas", "Profesionales", "Farmacias"],
   },
   {
@@ -47,7 +47,7 @@ const SERVICIOS = [
     icon: "🎯",
     title: "Estrategia End-to-End",
     desc: "Del análisis de mercado al anuncio activo. Una sola consultora, ciclo completo, sin intermediarios ni silos.",
-    href: "/#servicios",
+    href: "#contacto",
     audiences: ["Todos los segmentos"],
   },
   {
@@ -55,7 +55,7 @@ const SERVICIOS = [
     icon: "📧",
     title: "Email Marketing Segmentado",
     desc: "Comunicación automatizada y segmentada con pacientes y clientes para maximizar retención y ticket promedio en el sector salud.",
-    href: "/#servicios",
+    href: "#contacto",
     audiences: ["Farmacias", "Clínicas", "Droguerías"],
   },
 ];

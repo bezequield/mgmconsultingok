@@ -69,7 +69,7 @@ export default function Blog() {
         {/* CTA Blog */}
         <div className="text-center mt-12">
           <a
-            href="/#contacto"
+            href="#contacto"
             className="inline-block bg-mgm-yellow/10 border border-mgm-yellow/30 text-mgm-yellow font-bold px-8 py-3 rounded-xl hover:bg-mgm-yellow hover:text-mgm-navy-dark transition-all duration-200 text-sm"
           >
             Diagnóstico Gratuito para tu organización →

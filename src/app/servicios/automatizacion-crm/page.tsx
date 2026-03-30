@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const WA_LINK = "https://wa.me/5491127036100?text=" + encodeURIComponent("Hola MGM Consulting, quiero un diagnóstico gratuito sobre automatización y CRM para mi organización de salud.");
+
 export const metadata: Metadata = {
   title: "Automatización de Procesos & CRM Médico para Farmacias y Clínicas | MGM Consulting",
   description: "Reducimos la carga operativa de farmacias y consultorios con automatización de turnos, recordatorios WhatsApp y CRM médico con cumplimiento de datos Ley 25.326.",
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 const AUTOMATIZACIONES = [
   { icon: "📅", title: "Gestión de Turnos Automática", desc: "Sistema multicanal (WhatsApp, web, presencial) con confirmaciones automáticas y reprogramación sin intervención humana." },
   { icon: "💬", title: "WhatsApp Business API", desc: "Recordatorios 48h, 24h y 2h antes del turno. Respuestas automáticas a consultas frecuentes. Notificaciones de medicación crónica." },
-  { icon: "🗂️", title: "CRM Médico Compliant", desc: "Historial de pacientes, segmentación por patología y frecuencia, integración con historia clínica. 100% alineado con Ley 25.326." },
+  { icon: "🗂️", title: "CRM Médico", desc: "Historial de pacientes, segmentación por patología y frecuencia, integración con historia clínica. Gestión centralizada de toda la información." },
   { icon: "📊", title: "Dashboard de Gestión", desc: "Panel en tiempo real con tasa de asistencia, tipos de consulta, ingresos por turno y alertas de desvío." },
   { icon: "🔔", title: "Recordatorios de Medicación", desc: "Para farmacias: notificaciones automáticas cuando se acerca la fecha de renovación de recetas de medicación crónica." },
   { icon: "🔄", title: "Integración de Sistemas", desc: "Conectamos con los sistemas que ya usás: software de gestión de farmacias, HIS hospitalarios y plataformas de agenda." },
@@ -45,7 +47,7 @@ export default function AutomatizacionCRMPage() {
         <section className="py-16 sm:py-24 bg-mgm-navy-dark">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-4">
-              <Link href="/#servicios" className="text-mgm-yellow text-sm hover:underline">
+              <Link href="/general#servicios" className="text-mgm-yellow text-sm hover:underline">
                 ← Volver a Servicios
               </Link>
             </div>
@@ -60,12 +62,14 @@ export default function AutomatizacionCRMPage() {
               Reducimos la carga operativa de farmacias, consultorios y clínicas con automatizaciones
               inteligentes y un CRM médico que cumple con todos los estándares de privacidad argentinos.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -84,9 +88,8 @@ export default function AutomatizacionCRMPage() {
                   equipo de salud para hacer lo que realmente importa: atender personas.
                 </p>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  En MGM aplicamos la <strong className="text-white">Ley 26.529 de Derechos del Paciente</strong> y
-                  la <strong className="text-white">Ley 25.326 de Protección de Datos Personales</strong> en cada
-                  implementación. No es un extra: es la base de todo lo que construimos.
+                  En MGM diseñamos cada flujo con foco en la privacidad del paciente y la eficiencia del equipo.
+                  No es un extra: es la base de todo lo que construimos.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
                   El resultado es un sistema que funciona mientras vos atendés pacientes, no uno que
@@ -171,12 +174,14 @@ export default function AutomatizacionCRMPage() {
             <p className="text-gray-400 mb-8">
               En el diagnóstico gratuito calculamos exactamente cuánto tiempo y dinero estás perdiendo por procesos manuales, y el ROI estimado de automatizarlos.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-10 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Solicitar Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const WA_LINK = "https://wa.me/5491127036100?text=" + encodeURIComponent("Hola MGM Consulting, quiero un diagnóstico gratuito sobre transformación digital para mi organización de salud.");
+
 export const metadata: Metadata = {
   title: "Consultoría en Transformación Digital para Droguerías y Farmacéuticas | MGM Consulting",
   description: "Roadmap completo para digitalizar droguerías, farmacéuticas y distribuidoras. Integración ERP/CRM, capacitación de equipos y gestión del cambio organizacional.",
@@ -97,7 +99,7 @@ export default function TransformacionDigitalPage() {
         <section className="py-16 sm:py-24 bg-mgm-navy-dark">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-4">
-              <Link href="/#servicios" className="text-mgm-yellow text-sm hover:underline">
+              <Link href="/general#servicios" className="text-mgm-yellow text-sm hover:underline">
                 ← Volver a Servicios
               </Link>
             </div>
@@ -112,12 +114,14 @@ export default function TransformacionDigitalPage() {
               El roadmap completo para digitalizar droguerías, farmacéuticas y distribuidoras.
               Desde el diagnóstico hasta la integración ERP/CRM y la capacitación del equipo.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -254,12 +258,14 @@ export default function TransformacionDigitalPage() {
             <p className="text-gray-400 mb-8">
               En el diagnóstico gratuito te mostramos el roadmap personalizado para tu tipo de organización, con prioridades claras y resultados esperados en cada etapa.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-10 py-4 rounded-xl hover:bg-yellow-300 transition-colors text-base"
             >
               Solicitar Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
         </section>
       </main>

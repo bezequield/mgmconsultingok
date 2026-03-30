@@ -132,7 +132,7 @@ export default function BlogPost({ params }: Props) {
               Inicio
             </Link>
             <span>/</span>
-            <Link href="/#blog" className="hover:text-mgm-yellow transition-colors">
+            <Link href="/general#blog" className="hover:text-mgm-yellow transition-colors">
               Blog
             </Link>
             <span>/</span>
@@ -177,12 +177,14 @@ export default function BlogPost({ params }: Props) {
             <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
               En MGM ofrecemos un Diagnóstico Gratuito de 60 minutos para droguerías, farmacias, clínicas y laboratorios farmacéuticos.
             </p>
-            <Link
-              href="/#contacto"
+            <a
+              href={`https://wa.me/5491127036100?text=${encodeURIComponent("Hola MGM Consulting, leí el blog y quiero un diagnóstico gratuito para mi organización de salud.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-mgm-yellow text-mgm-navy-dark font-bold px-8 py-3.5 rounded-xl hover:bg-yellow-300 transition-colors text-sm"
             >
               Solicitá tu Diagnóstico Gratuito →
-            </Link>
+            </a>
           </div>
 
           {/* Author */}

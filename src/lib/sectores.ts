@@ -183,7 +183,7 @@ export const SECTORES: Sector[] = [
       {
         title: "E-commerce Farmacéutico",
         description:
-          "Implementación y optimización de tienda online cumpliendo normativa ANMAT vigente. Catálogo, fichas de producto, pasarela de pagos y logística integrada.",
+          "Implementación y optimización de tienda online. Catálogo, fichas de producto, pasarela de pagos y logística integrada.",
         slug: "transformacion-digital",
       },
       {
@@ -236,7 +236,7 @@ export const SECTORES: Sector[] = [
       {
         title: "CRM Médico con Cumplimiento Legal",
         description:
-          "Implementación de CRM que cumple Ley 26.529 (Derechos del Paciente) y Ley 25.326 (Protección de Datos). Seguimiento de pacientes, recordatorios y gestión de turnos sin riesgo legal.",
+          "Implementación de CRM para clínicas y centros de salud. Seguimiento de pacientes, recordatorios automáticos y gestión de turnos para mejorar la retención.",
         slug: "automatizacion-crm",
       },
       {

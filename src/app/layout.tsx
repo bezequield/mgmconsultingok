@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     { "@type": "Person", "name": "María Soledad Corrao", "jobTitle": "Cofundadora & Directora de Estrategia" },
                     { "@type": "Person", "name": "Ezequiel Ponce de León", "jobTitle": "Cofundador & Director de Implementación Digital" }
                   ],
-                  "sameAs": ["https://www.instagram.com/mgmconsulting.health"]
+                  "sameAs": ["https://www.instagram.com/mgmconsultingok"]
                 }
               ]
             })
