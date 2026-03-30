@@ -8,6 +8,7 @@ export default function GatekeeperModal() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
 
   useEffect(() => {
     const saved = localStorage.getItem("mgm_sector");
@@ -17,13 +18,27 @@ export default function GatekeeperModal() {
     }
   }, []);
 
-  // Lock body scroll while modal is open (prevents iOS Safari scroll-through)
+  // Lock body scroll while modal is open
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
+
+    const width = window.innerWidth - document.documentElement.clientWidth;
+    setScrollbarWidth(width);
+
+    const originalOverflow = document.body.style.overflow;
+    const originalPadding = document.body.style.paddingRight;
+
     document.body.style.overflow = "hidden";
+    if (width > 0) {
+      document.body.style.paddingRight = `${width}px`;
+    }
+
+    // Cleanup function ensures restoration
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = originalOverflow || "";
+      document.body.style.paddingRight = originalPadding || "";
+      // Clean up any potential subagent-injected classes just in case
+      document.body.classList.remove("antigravity-scroll-lock");
     };
   }, [open]);
 
@@ -45,9 +60,10 @@ export default function GatekeeperModal() {
     <div
       className="fixed inset-0 z-[9999] bg-[#070e2a]/90 backdrop-blur-sm overflow-y-auto"
       onClick={handleGeneral}
+      style={{ paddingRight: scrollbarWidth > 0 ? `${scrollbarWidth}px` : undefined }}
     >
-      {/* Centering wrapper — min-h-full keeps it centered even when short */}
-      <div className="min-h-screen flex items-center justify-center py-6 px-4" onClick={handleGeneral}>
+      {/* Centering wrapper — min-h-[100dvh] for mobile stability */}
+      <div className="min-h-[100dvh] flex items-center justify-center py-6 px-4" onClick={handleGeneral}>
         {/* Panel — stopPropagation so internal clicks don't close */}
         <div
           className="relative w-full max-w-2xl bg-[#0d1b4a] border border-white/10 rounded-3xl shadow-2xl shadow-black/60 p-4 sm:p-8"

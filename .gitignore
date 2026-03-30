@@ -45,3 +45,5 @@ webmgmconsulting/
 
 # scripts de despliegue/automatización
 /scripts
+
+/src/generated/prisma
