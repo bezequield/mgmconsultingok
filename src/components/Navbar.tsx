@@ -219,7 +219,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 bg-mgm-navy-dark z-[998] transition-all duration-300 overflow-y-auto ${
+        className={`lg:hidden fixed inset-0 bg-mgm-navy-dark z-[998] transition-all duration-300 overflow-y-auto overflow-x-hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

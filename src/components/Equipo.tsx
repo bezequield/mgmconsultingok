@@ -35,16 +35,16 @@ export default function Equipo() {
           {TEAM.map((member, i) => (
             <div
               key={member.name}
-              className="reveal flex flex-col sm:flex-row gap-6 bg-mgm-navy-l border border-white/10 rounded-2xl p-6 hover:border-mgm-yellow/40 transition-all duration-300"
+              className="reveal flex flex-row gap-6 bg-mgm-navy-l border border-white/10 rounded-2xl p-6 hover:border-mgm-yellow/40 transition-all duration-300"
               style={{ transitionDelay: `${i * 120}ms` }}
             >
-              {/* Foto: object-top asegura que las caras queden centradas en mobile */}
-              <div className="relative flex-shrink-0 w-full sm:w-36 h-48 sm:h-36 rounded-xl overflow-hidden">
+              {/* Foto: tamaño fijo para que nunca se deforme */}
+              <div className="relative flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 rounded-xl overflow-hidden">
                 <Image
                   src={member.img}
                   alt={member.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, 144px"
+                  sizes="144px"
                   className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                   style={{ filter: "brightness(0.92) contrast(1.08) saturate(0.75)" }}
                 />

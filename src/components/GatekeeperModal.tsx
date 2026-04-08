@@ -8,7 +8,6 @@ export default function GatekeeperModal() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
-  const [scrollbarWidth, setScrollbarWidth] = useState(0);
 
   useEffect(() => {
     const saved = localStorage.getItem("mgm_sector");
@@ -22,23 +21,18 @@ export default function GatekeeperModal() {
   useEffect(() => {
     if (!open) return;
 
-    const width = window.innerWidth - document.documentElement.clientWidth;
-    setScrollbarWidth(width);
-
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     const originalOverflow = document.body.style.overflow;
     const originalPadding = document.body.style.paddingRight;
 
     document.body.style.overflow = "hidden";
-    if (width > 0) {
-      document.body.style.paddingRight = `${width}px`;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
-    // Cleanup function ensures restoration
     return () => {
       document.body.style.overflow = originalOverflow || "";
       document.body.style.paddingRight = originalPadding || "";
-      // Clean up any potential subagent-injected classes just in case
-      document.body.classList.remove("antigravity-scroll-lock");
     };
   }, [open]);
 
@@ -58,9 +52,8 @@ export default function GatekeeperModal() {
   return (
     // Backdrop — scrollable so content is never clipped on small screens
     <div
-      className="fixed inset-0 z-[9999] bg-[#070e2a]/90 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-[9999] bg-[#070e2a]/90 backdrop-blur-sm overflow-y-auto overflow-x-hidden"
       onClick={handleGeneral}
-      style={{ paddingRight: scrollbarWidth > 0 ? `${scrollbarWidth}px` : undefined }}
     >
       {/* Centering wrapper — min-h-[100dvh] for mobile stability */}
       <div className="min-h-[100dvh] flex items-center justify-center py-6 px-4" onClick={handleGeneral}>
